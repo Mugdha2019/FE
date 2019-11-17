@@ -1,0 +1,15 @@
+.ui-datepicker-trigger{
+    position: absolute;
+    margin-top: -28px;
+    right:15px;
+    border:none;
+    background-color:transparent;
+  }
+  #custom-handle {
+    width: 3em;
+    height: 1.6em;
+    top: 50%;
+    margin-top: -.8em;
+    text-align: center;
+    line-height: 1.6em;
+  }

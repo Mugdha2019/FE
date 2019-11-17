@@ -1,0 +1,97 @@
+<div style="width: 400px;padding-left:120px">
+    <h3>Add Task</h3>
+</div>
+<div [hidden]="submitted" style="width: 400px;">
+    <form #addTaskForm="ngForm" (ngSubmit)="onSubmit()" ngc style="height: 300px;width:800px;padding-left: 120px;">
+    <table class="table">
+    <tbody>
+    <tr>
+	<td class="form-group">Task</td>
+    <td  class="form-group">
+    <input type="text" id="taskName" placeholder="name" required [(ngModel)]="Task.taskName" name="taskName">
+      <!-- <span class="text-danger" *ngIf="control.get('taskName').touched && control.get('taskName').invalid">Task Name is required</span> -->
+    </td>
+	</tr>
+	
+	<tr>
+	<td class="form-group">Priority</td>
+    <td class="form-group">
+    <div id="slider-horizontal" style="width:200px;"></div>
+    <input type="hidden" id="vPriority" name ="vPriority" >
+	</td>
+	</tr>
+	
+	<tr>
+	<td class="form-group">Parent Task</td>
+    <td  class="form-group">
+	<input type="text" id="parentTask" required [(ngModel)]="Task.parentTask" name="parentTask">
+    </td>
+	</tr>
+	
+	<tr>
+	<td class="form-group">Start Date</td>
+    <td  class="form-group">
+	<input type="text" id="from" name="from">
+    </td>
+	</tr>
+	
+	<tr>
+	<td class="form-group">End Date</td>
+    <td  class="form-group">
+    <input type="text" id="to" name="to">
+    </td>
+	</tr>
+	
+	</tbody>
+    </table>
+    </form>
+    <div style="width: 400px;padding-left:120px">
+	<button type="submit" class="btn btn-success">Add</button>
+    <button type="reset" class="btn btn-reset" (ngSubmit)="addTaskForm.reset()">Reset</button>
+    </div>
+
+</div>
+<div [hidden]="!submitted">
+    <h4>You submitted successfully!</h4>
+</div>
+
+<!-- 
+<div style="width: 400px;padding-left:190px">
+    <h3>Add Task</h3>
+</div>
+<div [hidden]="submitted" style="width: 400px;padding-left:190px">
+    <form (ngSubmit)="onSubmit()">
+        <div class="form-group">
+            <label for="name">Task</label>
+            <input type="text" class="form-control" id="taskName" required [(ngModel)]="Task.taskName" name="taskName">
+        </div>
+
+        <div class="form-group">
+            <label for="name">Priority</label>
+            <input type="text" id="vPriority" name ="vPriority" hidden>
+            <div  class="form-group" id="slider-horizontal" style="width:200px;"></div>
+       </div>
+
+        <div class="form-group">
+            <label for="name">Parent Task</label>
+            <input type="text" class="form-control" id="parentTask" required [(ngModel)]="Task.parentTask" name="parentTask">
+        </div>
+
+        <div class="form-group">
+            <label for="name">Start Date</label>
+            <input type="text" id="from" name="from">
+         </div>
+
+        <div class="form-group">
+            <label for="name">End Date</label>
+            <input type="text" id="to" name="to">
+        </div>
+
+        <button type="submit" class="btn btn-success">Add Task</button>
+        <button type="reset" class="btn btn-reset">Reset</button>
+    </form>
+</div>
+
+<div [hidden]="!submitted">
+    <h4>You submitted successfully!</h4>
+</div> -->
